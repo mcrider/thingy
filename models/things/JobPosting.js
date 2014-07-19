@@ -1,0 +1,28 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var schema = new Schema({ workHours: { type: Schema.Types.ObjectId, ref: 'workHours' },
+  title: { type: Schema.Types.ObjectId, ref: 'title' },
+  specialCommitments: { type: Schema.Types.ObjectId, ref: 'specialCommitments' },
+  skills: { type: Schema.Types.ObjectId, ref: 'skills' },
+  salaryCurrency: { type: Schema.Types.ObjectId, ref: 'salaryCurrency' },
+  responsibilities: { type: Schema.Types.ObjectId, ref: 'responsibilities' },
+  qualifications: { type: Schema.Types.ObjectId, ref: 'qualifications' },
+  occupationalCategory: { type: Schema.Types.ObjectId, ref: 'occupationalCategory' },
+  jobLocation: { type: Schema.Types.ObjectId, ref: 'jobLocation' },
+  industry: { type: Schema.Types.ObjectId, ref: 'industry' },
+  incentives: { type: Schema.Types.ObjectId, ref: 'incentives' },
+  hiringOrganization: { type: Schema.Types.ObjectId, ref: 'hiringOrganization' },
+  experienceRequirements: { type: Schema.Types.ObjectId, ref: 'experienceRequirements' },
+  employmentType: { type: Schema.Types.ObjectId, ref: 'employmentType' },
+  educationRequirements: { type: Schema.Types.ObjectId, ref: 'educationRequirements' },
+  datePosted: { type: Schema.Types.ObjectId, ref: 'datePosted' },
+  benefits: { type: Schema.Types.ObjectId, ref: 'benefits' },
+  baseSalary: { type: Schema.Types.ObjectId, ref: 'baseSalary' },
+  url: { type: Schema.Types.ObjectId, ref: 'url' },
+  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
+  name: { type: Schema.Types.ObjectId, ref: 'name' },
+  image: { type: Schema.Types.ObjectId, ref: 'image' },
+  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  alternateName: { type: Schema.Types.ObjectId, ref: 'alternateName' },
+  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' } });
+module.exports = mongoose.model('JobPosting', schema);

@@ -1,0 +1,21 @@
+{
+  "name": "lucien",
+  "version": "0.0.1",
+  "description": "A tool for managing and serving schema.org-based data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "schema.org",
+    "semantic"
+  ],
+  "author": "Matt Crider",
+  "license": "MIT",
+  "dependencies" : {
+    "express"    : "latest",
+    "mongoose"   : "latest",
+    "request"    : "latest",
+    "cheerio"    : "latest"
+  }
+}

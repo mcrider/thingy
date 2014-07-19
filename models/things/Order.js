@@ -1,0 +1,27 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var schema = new Schema({ paymentUrl: { type: Schema.Types.ObjectId, ref: 'paymentUrl' },
+  paymentMethodId: { type: Schema.Types.ObjectId, ref: 'paymentMethodId' },
+  paymentMethod: { type: Schema.Types.ObjectId, ref: 'paymentMethod' },
+  paymentDue: { type: Schema.Types.ObjectId, ref: 'paymentDue' },
+  orderStatus: { type: Schema.Types.ObjectId, ref: 'orderStatus' },
+  orderNumber: { type: Schema.Types.ObjectId, ref: 'orderNumber' },
+  orderedItem: { type: Schema.Types.ObjectId, ref: 'orderedItem' },
+  orderDate: { type: Schema.Types.ObjectId, ref: 'orderDate' },
+  merchant: { type: Schema.Types.ObjectId, ref: 'merchant' },
+  isGift: { type: Schema.Types.ObjectId, ref: 'isGift' },
+  discountCurrency: { type: Schema.Types.ObjectId, ref: 'discountCurrency' },
+  discountCode: { type: Schema.Types.ObjectId, ref: 'discountCode' },
+  discount: { type: Schema.Types.ObjectId, ref: 'discount' },
+  customer: { type: Schema.Types.ObjectId, ref: 'customer' },
+  confirmationNumber: { type: Schema.Types.ObjectId, ref: 'confirmationNumber' },
+  billingAddress: { type: Schema.Types.ObjectId, ref: 'billingAddress' },
+  acceptedOffer: { type: Schema.Types.ObjectId, ref: 'acceptedOffer' },
+  url: { type: Schema.Types.ObjectId, ref: 'url' },
+  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
+  name: { type: Schema.Types.ObjectId, ref: 'name' },
+  image: { type: Schema.Types.ObjectId, ref: 'image' },
+  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  alternateName: { type: Schema.Types.ObjectId, ref: 'alternateName' },
+  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' } });
+module.exports = mongoose.model('Order', schema);

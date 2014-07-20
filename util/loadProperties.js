@@ -28,6 +28,25 @@ var parseDataType = function(type) {
   }
 }
 
+var generateModel = function(property, dataType) {
+  var replacedContents = fileContents.replace(/&&propertyName&&/g, property.id).replace(/&&dataType&&/g, dataType);
+  fs.writeFile('../models/properties/' + property.id + '.js', replacedContents, function(err) {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log("Created file");
+    }
+  });
+}
+
+var generateAdminPartial = function(property, dataType) {
+
+}
+
+var generatePublicPartial = function(property, dataType) {
+
+}
+
 // Read in our properties into an object
 fs.readFile(infile, 'utf8', function (err, data) {
   if (err) {
@@ -38,12 +57,13 @@ fs.readFile(infile, 'utf8', function (err, data) {
   data = JSON.parse(data);
 
   // Write each property into its own file
-  for (var property in data.properties) {
+  for (var propertyKey in data.properties) {
+    var property = data.properties[propertyKey];
 
     // Scrape schema.org to get the data type of this property
     (function(property) {
-      request("http://schema.org/" + property, function(error, response, html){
-        console.log(property);
+      request("http://schema.org/" + property.id, function(error, response, html){
+        console.log(property.id);
         if(!error){
           var $ = cheerio.load(html), dataType = 'String';
           if ($('#mainContent').find('.definition-table').first().find('code').length > 1) {
@@ -53,14 +73,8 @@ fs.readFile(infile, 'utf8', function (err, data) {
             dataType = parseDataType(schemaType);
           }
 
-          var replacedContents = fileContents.replace(/&&propertyName&&/g, property).replace(/&&dataType&&/g, dataType);
-          fs.writeFile('../models/properties/' + property + '.js', replacedContents, function(err) {
-            if(err) {
-              console.log(err);
-            } else {
-              console.log("Created file");
-            }
-          });
+          generateModel(property, dataType);
+          generateAdminPartial(property, dataType)
         }
       })
     })(property);

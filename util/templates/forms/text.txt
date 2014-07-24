@@ -1,0 +1,4 @@
+div.form-element
+  label(for="{{label}}") {{label}}
+  input(type="text", id="{{label}}", name="{{label}}", placeholder="{{label}}")
+  div.description {{description}}

@@ -1,0 +1,6 @@
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema;
+var schema = new Schema({
+  value:  {{{dataType}}}
+});
+module.exports = mongoose.model('{{{propertyName}}}', schema);

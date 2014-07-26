@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 var schema = new Schema({
-  value:  Schema.Types.Mixed
+  value:  { type: Schema.Types.ObjectId, ref: "UserComments" }
 });
 module.exports = mongoose.model('comment', schema);

@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 var schema = new Schema({
-  value:  { type: Schema.Types.ObjectId, ref: 'ServiceChannel' }
+  value:  { type: Schema.Types.ObjectId, ref: "ServiceChannel" }
 });
 module.exports = mongoose.model('availableChannel', schema);

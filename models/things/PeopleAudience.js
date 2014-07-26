@@ -1,19 +1,20 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var schema = new Schema({ suggestedMinAge: { type: Schema.Types.ObjectId, ref: 'suggestedMinAge' },
-  suggestedMaxAge: { type: Schema.Types.ObjectId, ref: 'suggestedMaxAge' },
-  suggestedGender: { type: Schema.Types.ObjectId, ref: 'suggestedGender' },
-  requiredMinAge: { type: Schema.Types.ObjectId, ref: 'requiredMinAge' },
-  requiredMaxAge: { type: Schema.Types.ObjectId, ref: 'requiredMaxAge' },
+var schema = new Schema({ healthCondition: { type: Schema.Types.ObjectId, ref: 'healthCondition' },
   requiredGender: { type: Schema.Types.ObjectId, ref: 'requiredGender' },
-  healthCondition: { type: Schema.Types.ObjectId, ref: 'healthCondition' },
-  geographicArea: { type: Schema.Types.ObjectId, ref: 'geographicArea' },
+  requiredMaxAge: { type: Schema.Types.ObjectId, ref: 'requiredMaxAge' },
+  requiredMinAge: { type: Schema.Types.ObjectId, ref: 'requiredMinAge' },
+  suggestedGender: { type: Schema.Types.ObjectId, ref: 'suggestedGender' },
+  suggestedMaxAge: { type: Schema.Types.ObjectId, ref: 'suggestedMaxAge' },
+  suggestedMinAge: { type: Schema.Types.ObjectId, ref: 'suggestedMinAge' },
   audienceType: { type: Schema.Types.ObjectId, ref: 'audienceType' },
-  url: { type: Schema.Types.ObjectId, ref: 'url' },
-  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
-  name: { type: Schema.Types.ObjectId, ref: 'name' },
-  image: { type: Schema.Types.ObjectId, ref: 'image' },
-  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  geographicArea: { type: Schema.Types.ObjectId, ref: 'geographicArea' },
+  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' },
   alternateName: { type: Schema.Types.ObjectId, ref: 'alternateName' },
-  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' } });
+  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  image: { type: Schema.Types.ObjectId, ref: 'image' },
+  name: { type: Schema.Types.ObjectId, ref: 'name' },
+  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
+  url: { type: Schema.Types.ObjectId, ref: 'url' },
+  potentialAction: { type: Schema.Types.ObjectId, ref: 'potentialAction' } });
 module.exports = mongoose.model('PeopleAudience', schema);

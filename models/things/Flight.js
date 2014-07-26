@@ -1,0 +1,27 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var schema = new Schema({ carrier: { type: Schema.Types.ObjectId, ref: 'carrier' },
+  provider: { type: Schema.Types.ObjectId, ref: 'provider' },
+  flightNumber: { type: Schema.Types.ObjectId, ref: 'flightNumber' },
+  departureTime: { type: Schema.Types.ObjectId, ref: 'departureTime' },
+  arrivalTime: { type: Schema.Types.ObjectId, ref: 'arrivalTime' },
+  departureAirport: { type: Schema.Types.ObjectId, ref: 'departureAirport' },
+  departureAirport: { type: Schema.Types.ObjectId, ref: 'departureAirport' },
+  departureGate: { type: Schema.Types.ObjectId, ref: 'departureGate' },
+  arrivalGate: { type: Schema.Types.ObjectId, ref: 'arrivalGate' },
+  departureTerminal: { type: Schema.Types.ObjectId, ref: 'departureTerminal' },
+  arrivalTerminal: { type: Schema.Types.ObjectId, ref: 'arrivalTerminal' },
+  aircraft: { type: Schema.Types.ObjectId, ref: 'aircraft' },
+  mealService: { type: Schema.Types.ObjectId, ref: 'mealService' },
+  estimatedFlightDuration: { type: Schema.Types.ObjectId, ref: 'estimatedFlightDuration' },
+  flightDistance: { type: Schema.Types.ObjectId, ref: 'flightDistance' },
+  webCheckinTime: { type: Schema.Types.ObjectId, ref: 'webCheckinTime' },
+  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' },
+  alternateName: { type: Schema.Types.ObjectId, ref: 'alternateName' },
+  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  image: { type: Schema.Types.ObjectId, ref: 'image' },
+  name: { type: Schema.Types.ObjectId, ref: 'name' },
+  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
+  url: { type: Schema.Types.ObjectId, ref: 'url' },
+  potentialAction: { type: Schema.Types.ObjectId, ref: 'potentialAction' } });
+module.exports = mongoose.model('Flight', schema);

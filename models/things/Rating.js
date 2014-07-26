@@ -1,13 +1,14 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var schema = new Schema({ worstRating: { type: Schema.Types.ObjectId, ref: 'worstRating' },
+var schema = new Schema({ bestRating: { type: Schema.Types.ObjectId, ref: 'bestRating' },
   ratingValue: { type: Schema.Types.ObjectId, ref: 'ratingValue' },
-  bestRating: { type: Schema.Types.ObjectId, ref: 'bestRating' },
-  url: { type: Schema.Types.ObjectId, ref: 'url' },
-  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
-  name: { type: Schema.Types.ObjectId, ref: 'name' },
-  image: { type: Schema.Types.ObjectId, ref: 'image' },
-  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  worstRating: { type: Schema.Types.ObjectId, ref: 'worstRating' },
+  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' },
   alternateName: { type: Schema.Types.ObjectId, ref: 'alternateName' },
-  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' } });
+  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  image: { type: Schema.Types.ObjectId, ref: 'image' },
+  name: { type: Schema.Types.ObjectId, ref: 'name' },
+  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
+  url: { type: Schema.Types.ObjectId, ref: 'url' },
+  potentialAction: { type: Schema.Types.ObjectId, ref: 'potentialAction' } });
 module.exports = mongoose.model('Rating', schema);

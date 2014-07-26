@@ -1,15 +1,16 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var schema = new Schema({ validThrough: { type: Schema.Types.ObjectId, ref: 'validThrough' },
-  validFrom: { type: Schema.Types.ObjectId, ref: 'validFrom' },
-  opens: { type: Schema.Types.ObjectId, ref: 'opens' },
+var schema = new Schema({ closes: { type: Schema.Types.ObjectId, ref: 'closes' },
   dayOfWeek: { type: Schema.Types.ObjectId, ref: 'dayOfWeek' },
-  closes: { type: Schema.Types.ObjectId, ref: 'closes' },
-  url: { type: Schema.Types.ObjectId, ref: 'url' },
-  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
-  name: { type: Schema.Types.ObjectId, ref: 'name' },
-  image: { type: Schema.Types.ObjectId, ref: 'image' },
-  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  opens: { type: Schema.Types.ObjectId, ref: 'opens' },
+  validFrom: { type: Schema.Types.ObjectId, ref: 'validFrom' },
+  validThrough: { type: Schema.Types.ObjectId, ref: 'validThrough' },
+  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' },
   alternateName: { type: Schema.Types.ObjectId, ref: 'alternateName' },
-  additionalType: { type: Schema.Types.ObjectId, ref: 'additionalType' } });
+  description: { type: Schema.Types.ObjectId, ref: 'description' },
+  image: { type: Schema.Types.ObjectId, ref: 'image' },
+  name: { type: Schema.Types.ObjectId, ref: 'name' },
+  sameAs: { type: Schema.Types.ObjectId, ref: 'sameAs' },
+  url: { type: Schema.Types.ObjectId, ref: 'url' },
+  potentialAction: { type: Schema.Types.ObjectId, ref: 'potentialAction' } });
 module.exports = mongoose.model('OpeningHoursSpecification', schema);

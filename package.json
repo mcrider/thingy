@@ -13,9 +13,11 @@
   "author": "Matt Crider",
   "license": "MIT",
   "dependencies" : {
-    "express"    : "latest",
-    "mongoose"   : "latest",
-    "request"    : "latest",
-    "cheerio"    : "latest"
+    "express": "latest",
+    "mongoose": "latest",
+    "request": "latest",
+    "cheerio": "latest",
+    "mongoose-schema-extend": "latest",
+    "mustache": "latest"
   }
 }

@@ -1,0 +1,4 @@
+div.thing.{{label}}
+  h1 {{label}}
+  p.thing-description {{{description}}}
+  {{{propertyIncludes}}}

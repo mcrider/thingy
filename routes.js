@@ -17,9 +17,11 @@ module.exports = (function() {
     api.get('/thing/:id.:format?', function(req, res) {
       if (req.params.format == 'json') {
         res.send('json - by id');
-      } else if (req.params.format == 'rdfa') {
+      } else if (req.params.format == 'rdf') {
+        // Todo: Use library to convert JSON-LD to RDFa
         res.send('rdfa - by id');
       } else {
+        // Todo: Strip attributes from RDF?
         res.send('html - by id');
       }
     });
@@ -44,7 +46,8 @@ module.exports = (function() {
       // Assuming no hierarchy for types in the URL:
       if (req.params.format == 'json') {
         res.send('json - by type.  Type = ' + req.params.type);
-      } else if (req.params.format == 'rdfa') {
+      } else if (req.params.format == 'rdf') {
+        // Todo: Use library to convert JSON-LD to RDFa
         res.send('rdfa - by type.  Type = ' + req.params.type);
       } else {
         res.send('html - by type.  Type = ' + req.params.type);
@@ -57,7 +60,8 @@ module.exports = (function() {
     api.get('/property/:id.:format?', function(req, res) {
       if (req.params.format == 'json') {
         res.send('property json - by id');
-      } else if (req.params.format == 'rdfa') {
+      } else if (req.params.format == 'rdf') {
+        // Todo: Use library to convert JSON-LD to RDFa
         res.send('property property rdfa - by id');
       } else {
         res.send('property html - by id');
